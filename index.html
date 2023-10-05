@@ -1,15 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quizapp</title>
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js"></script>
-</head>
-<body>
-    <h1></h1>
-    <button class="btn btn-primary">1233444</button>
-</body>
+  </head>
+  <body onload="init()">
+    <div class="card">
+      <div class="card-container">
+        
+          <div class="card-image-and-question">
+            <div class="card-image-container">
+              <img src="./img/pikachu.jpg" class="card-img-top" alt="..." />
+            </div>
+
+            <div class="card-question-container">
+              <h5 class="question-title">
+                <span>
+                  Frage
+                  <b id="question-point">X</b>
+                  /
+                  <b id="question-amount"></b>
+                </span>
+              </h5>
+
+              <p id="question" class="question-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+            </div>
+          </div>
+        
+      </div>
+      <div class="card-body">
+        <div class="answer-container">
+          <div id="answer_1" class="card-answer-container">
+            This is some text within a card body.
+          </div>
+        </div>
+        <div class="answer-container">
+          <div id="answer_2" class="card-answer-container">
+            This is some text within a card body.
+          </div>
+        </div>
+        <div class="answer-container">
+          <div id="answer_3" class="card-answer-container">
+            This is some text within a card body.
+          </div>
+        </div>
+        <div class="answer-container">
+          <div id="answer_4" class="card-answer-container">
+            This is some text within a card body.
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
