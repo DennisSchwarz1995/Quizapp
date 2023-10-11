@@ -12,53 +12,97 @@
     <script src="script.js"></script>
   </head>
   <body onload="init()">
-    <div class="card">
+    <div class="progress">
+      <div
+        id="progress-bar"
+        class="progress-bar"
+        role="progressbar"
+        style="width: 0%"
+        aria-valuemax="100"
+      >
+        25%
+      </div>
+    </div>
+
+    <div id="end-screen" style="display: none">
+      <div class="end-screen-container">
+        <img
+          class="end-screen-image"
+          src="./img/endscreen.webp"
+          alt="endscreen"
+        />
+      </div>
+      <div class="end-screen-text">
+        <span>Quiz beendet!</span>
+        <span
+          >Du hast <span id="amount-of-right-answers"></span> von
+          <span id="question-amount-end-screen"></span> Fragen richtig
+          beantwortet!</span
+        >
+      </div>
+      <div class="end-screen-button-container">
+        <button onclick="restartGame()" class="end-screen-button">Erneut spielen</button>
+      </div>
+    </div>
+
+    <div id="content" class="card">
       <div class="card-container">
-        
-          <div class="card-image-and-question">
-            <div class="card-image-container">
-              <img src="./img/pikachu.jpg" class="card-img-top" alt="..." />
-            </div>
-
-            <div class="card-question-container">
-              <h5 class="question-title">
-                <span>
-                  Frage
-                  <b id="question-point">X</b>
-                  /
-                  <b id="question-amount"></b>
-                </span>
-              </h5>
-
-              <p id="question" class="question-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-            </div>
+        <div class="card-image-and-question">
+          <div class="card-image-container">
+            <img
+              id="question-image"
+              src="./img/pikachu.jpg"
+              class="card-img-top"
+              alt="..."
+            />
           </div>
-        
+
+          <div class="card-question-container">
+            <h5 class="question-title">
+              <span>
+                Frage
+                <b id="question-point"></b>
+                /
+                <b id="question-amount"></b>
+              </span>
+            </h5>
+
+            <p id="question" class="question-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+          </div>
+        </div>
       </div>
       <div class="card-body">
-        <div class="answer-container">
+        <div class="answer-container" onclick="selectAnswer('answer_1')">
           <div id="answer_1" class="card-answer-container">
             This is some text within a card body.
           </div>
         </div>
-        <div class="answer-container">
+        <div class="answer-container" onclick="selectAnswer('answer_2')">
           <div id="answer_2" class="card-answer-container">
             This is some text within a card body.
           </div>
         </div>
-        <div class="answer-container">
+        <div class="answer-container" onclick="selectAnswer('answer_3')">
           <div id="answer_3" class="card-answer-container">
             This is some text within a card body.
           </div>
         </div>
-        <div class="answer-container">
+        <div class="answer-container" onclick="selectAnswer('answer_4')">
           <div id="answer_4" class="card-answer-container">
             This is some text within a card body.
           </div>
         </div>
+        <button
+          id="next-button"
+          class="next-button"
+          onclick="nextQuestion()"
+          disabled
+        >
+          Nächste Frage
+        </button>
       </div>
     </div>
   </body>
