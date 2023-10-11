@@ -3,13 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quizapp</title>
+    <title>NerdQuiz</title>
     <link
       rel="stylesheet"
       href="node_modules/bootstrap/dist/css/bootstrap.min.css"
     />
+    <link rel="icon" href="./img/favicon.ico" />
     <link rel="stylesheet" href="style.css" />
     <script src="script.js"></script>
+    <script src="json.js"></script>
   </head>
   <body onload="init()">
     <div class="progress">
@@ -33,15 +35,17 @@
         />
       </div>
       <div class="end-screen-text">
-        <span>Quiz beendet!</span>
+        <span>Quiz over!</span>
         <span
-          >Du hast <span id="amount-of-right-answers"></span> von
-          <span id="question-amount-end-screen"></span> Fragen richtig
-          beantwortet!</span
+          >You answered <span id="amount-of-right-answers"></span> out of
+          <span id="question-amount-end-screen"></span> questions
+          correctly!</span
         >
       </div>
       <div class="end-screen-button-container">
-        <button onclick="restartGame()" class="end-screen-button">Erneut spielen</button>
+        <button onclick="restartGame()" class="end-screen-button">
+          Play again
+        </button>
       </div>
     </div>
 
@@ -60,7 +64,7 @@
           <div class="card-question-container">
             <h5 class="question-title">
               <span>
-                Frage
+                Question
                 <b id="question-point"></b>
                 /
                 <b id="question-amount"></b>
@@ -75,22 +79,38 @@
         </div>
       </div>
       <div class="card-body">
-        <div class="answer-container" onclick="selectAnswer('answer_1')">
+        <div
+          id="answer_1-container"
+          class="answer-container"
+          onclick="selectAnswer('answer_1')"
+        >
           <div id="answer_1" class="card-answer-container">
             This is some text within a card body.
           </div>
         </div>
-        <div class="answer-container" onclick="selectAnswer('answer_2')">
+        <div
+          id="answer_2-container"
+          class="answer-container"
+          onclick="selectAnswer('answer_2')"
+        >
           <div id="answer_2" class="card-answer-container">
             This is some text within a card body.
           </div>
         </div>
-        <div class="answer-container" onclick="selectAnswer('answer_3')">
+        <div
+          id="answer_3-container"
+          class="answer-container"
+          onclick="selectAnswer('answer_3')"
+        >
           <div id="answer_3" class="card-answer-container">
             This is some text within a card body.
           </div>
         </div>
-        <div class="answer-container" onclick="selectAnswer('answer_4')">
+        <div
+          id="answer_4-container"
+          class="answer-container"
+          onclick="selectAnswer('answer_4')"
+        >
           <div id="answer_4" class="card-answer-container">
             This is some text within a card body.
           </div>
@@ -101,7 +121,7 @@
           onclick="nextQuestion()"
           disabled
         >
-          Nächste Frage
+          Next Question
         </button>
       </div>
     </div>
